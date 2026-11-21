@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import "@/muftlo/About/about.css";
 import WorkflowSection from "@/muftlo/About/aboutPipeline";
-import LampDemo from "@/muftlo/ui/lamp";
+import AboutHero from "@/muftlo/About/AboutHero";
 import { getSiteMedia } from "@/muftlo/site-media";
 
 export default function AboutPage() {
@@ -76,7 +76,7 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen overflow-hidden">
-      <LampDemo />
+      <AboutHero />
 
       <section
         id="about"
