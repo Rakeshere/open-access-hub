@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -24,12 +25,104 @@ const glass =
   "border border-brand-cream/15 bg-brand-cream/[0.06] backdrop-blur-xl shadow-[0_24px_60px_-28px_rgba(0,0,0,0.7)]";
 
 const services = [
-  { icon: Megaphone, label: "Digital Marketing" },
-  { icon: Camera, label: "Photo & Video" },
-  { icon: Code2, label: "Web Development" },
-  { icon: Bot, label: "AI Automation" },
-  { icon: Smartphone, label: "App Development" },
+  { icon: Megaphone, label: "Digital Marketing", note: "SEO, ads & social" },
+  { icon: Camera, label: "Photo & Video", note: "Shoots, reels & films" },
+  { icon: Code2, label: "Web Development", note: "Fast, modern websites" },
+  { icon: Bot, label: "AI Automation", note: "Chatbots & workflows" },
+  { icon: Smartphone, label: "App Development", note: "Android & iOS apps" },
 ];
+
+/* "What we do" card: rows highlight one by one, each opens the services page */
+function WhatWeDo() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused) return;
+    const t = setTimeout(() => setActive((a) => (a + 1) % services.length), 2200);
+    return () => clearTimeout(t);
+  }, [active, paused]);
+
+  return (
+    <motion.div
+      {...fadeUp(0.8)}
+      onMouseLeave={() => setPaused(false)}
+      className={`absolute right-[4%] top-[36%] hidden w-[17.5rem] overflow-hidden rounded-3xl lg:block xl:right-[6%] ${glass}`}
+    >
+      <span className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-brand-orange to-transparent" />
+
+      <div className="flex items-center justify-between px-5 pb-3 pt-5">
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-cream/55">
+          What we do
+        </p>
+        <span className="rounded-full bg-brand-orange/15 px-2.5 py-0.5 text-[11px] font-bold text-brand-orange">
+          {String(services.length).padStart(2, "0")}
+        </span>
+      </div>
+
+      <ul className="px-2 pb-2">
+        {services.map(({ icon: Icon, label, note }, i) => {
+          const on = i === active;
+          return (
+            <motion.li
+              key={label}
+              initial={{ opacity: 0, x: 16 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 1 + i * 0.1, ease }}
+              onMouseEnter={() => {
+                setPaused(true);
+                setActive(i);
+              }}
+            >
+              <Link
+                href="/services"
+                className="relative flex items-center gap-3 rounded-2xl px-3 py-2.5"
+              >
+                {on && (
+                  <motion.span
+                    layoutId="what-we-do-active"
+                    transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                    className="absolute inset-0 rounded-2xl border border-brand-orange/30 bg-brand-orange/10"
+                  />
+                )}
+                <span
+                  className={`relative flex h-9 w-9 shrink-0 items-center justify-center rounded-xl transition-colors duration-300 ${
+                    on ? "bg-brand-orange text-brand-navy" : "bg-brand-cream/[0.07] text-brand-orange"
+                  }`}
+                >
+                  <Icon className="h-4 w-4" />
+                </span>
+                <span className="relative min-w-0 flex-1">
+                  <span className="block text-sm font-semibold leading-tight">{label}</span>
+                  <span
+                    className={`block text-[11px] leading-tight transition-colors duration-300 ${
+                      on ? "text-brand-cream/70" : "text-brand-cream/40"
+                    }`}
+                  >
+                    {note}
+                  </span>
+                </span>
+                <ArrowUpRight
+                  className={`relative h-4 w-4 shrink-0 transition-all duration-300 ${
+                    on ? "translate-x-0 text-brand-orange opacity-100" : "-translate-x-1 opacity-0"
+                  }`}
+                />
+              </Link>
+            </motion.li>
+          );
+        })}
+      </ul>
+
+      <Link
+        href="/services"
+        className="group flex items-center justify-between border-t border-brand-cream/10 px-5 py-3.5 text-xs font-semibold text-brand-cream/70 transition-colors hover:text-brand-orange"
+      >
+        Explore all services
+        <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+      </Link>
+    </motion.div>
+  );
+}
 
 /* Small vector sparkles for decoration */
 const sparkles = [
@@ -38,31 +131,6 @@ const sparkles = [
   { pos: "left-[28%] bottom-[30%]", size: "h-2 w-2", delay: 0.6 },
   { pos: "right-[30%] bottom-[18%]", size: "h-3 w-3", delay: 1.8 },
 ];
-
-function RotatingBadge() {
-  const text = "R&D • BUILD • GROW • INNOVATE • ";
-  return (
-    <motion.div
-      {...fadeUp(0.6)}
-      className="absolute right-[6%] top-28 hidden h-28 w-28 items-center justify-center lg:flex"
-    >
-      <motion.svg
-        viewBox="0 0 100 100"
-        className="absolute inset-0 h-full w-full text-brand-cream/70"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-      >
-        <defs>
-          <path id="about-badge-circle" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" />
-        </defs>
-        <text className="fill-current text-[8px] font-semibold">
-          <textPath href="#about-badge-circle" textLength="234" lengthAdjust="spacing">{text}</textPath>
-        </text>
-      </motion.svg>
-      <Sparkle className="h-6 w-6 fill-brand-orange text-brand-orange" />
-    </motion.div>
-  );
-}
 
 export default function AboutHero() {
   return (
@@ -83,8 +151,6 @@ export default function AboutHero() {
           <Sparkle className={`${s.size} fill-brand-orange text-brand-orange`} />
         </motion.span>
       ))}
-
-      <RotatingBadge />
 
       {/* heading */}
       <div className="relative mx-auto flex w-full max-w-7xl shrink-0 flex-col items-center px-5 pt-28 text-center lg:static lg:pt-28">
@@ -135,31 +201,7 @@ export default function AboutHero() {
         </motion.div>
       </div>
 
-      {/* what we do card (desktop) */}
-      <motion.div
-        {...fadeUp(0.8)}
-        className={`absolute right-[5%] top-[40%] hidden w-60 rounded-3xl p-5 lg:block xl:right-[7%] ${glass}`}
-      >
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-brand-cream/50">
-          What we do
-        </p>
-        <ul className="space-y-3">
-          {services.map(({ icon: Icon, label }, i) => (
-            <motion.li
-              key={label}
-              initial={{ opacity: 0, x: 16 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 1 + i * 0.1, ease }}
-              className="flex items-center gap-3 text-sm font-medium"
-            >
-              <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-brand-orange/15 text-brand-orange">
-                <Icon className="h-4 w-4" />
-              </span>
-              {label}
-            </motion.li>
-          ))}
-        </ul>
-      </motion.div>
+      <WhatWeDo />
 
       {/* orbit line */}
       <svg

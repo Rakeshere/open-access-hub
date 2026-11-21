@@ -6,4 +6,5 @@
 - [x] Fix the imported-page type declarations and resolve unavailable image references.
 - [x] Verify public routes, all three blog articles, the contact form handoff, and a 390px phone viewport.
 - [x] Update the migration ledger with verified work and remaining external checks.
+- [x] About opening screen: remove spinning R&D badge and redesign the "What we do" card.
 - [ ] Publish the site — blocked because the release was declined.
