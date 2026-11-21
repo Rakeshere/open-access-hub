@@ -31,12 +31,6 @@ const services = [
   { icon: Smartphone, label: "App Development" },
 ];
 
-/* Two glass chips floating beside the portrait */
-const chips = [
-  { icon: Megaphone, title: "Marketing", sub: "Reach the right people", pos: "left-0 top-[62%] -rotate-[6deg] sm:left-[2%] sm:top-[24%]", delay: 1.0, dur: 5 },
-  { icon: Bot, title: "AI Automation", sub: "Work smarter", pos: "right-0 top-[80%] rotate-[6deg] sm:right-[2%] sm:top-[46%]", delay: 1.2, dur: 6 },
-];
-
 /* Small vector sparkles for decoration */
 const sparkles = [
   { pos: "left-[12%] top-[22%]", size: "h-3 w-3", delay: 0 },
@@ -176,7 +170,7 @@ export default function AboutHero() {
         <ellipse cx="500" cy="180" rx="495" ry="130" stroke="currentColor" strokeWidth="1.2" />
       </svg>
 
-      {/* portrait + floating chips */}
+      {/* portrait */}
       <div className="relative mx-auto mt-8 h-[440px] w-full max-w-[680px] sm:h-[520px] lg:mt-4 lg:h-auto lg:min-h-[360px] lg:flex-1">
         <motion.div
           initial={{ opacity: 0, y: 60, scale: 0.96 }}
@@ -193,28 +187,6 @@ export default function AboutHero() {
           />
         </motion.div>
 
-        {chips.map(({ icon: Icon, title, sub, pos, delay, dur }) => (
-          <motion.div
-            key={title}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: [0, -10, 0] }}
-            transition={{
-              opacity: { duration: 0.7, delay },
-              y: { duration: dur, repeat: Infinity, ease: "easeInOut", delay },
-            }}
-            className={`absolute ${pos}`}
-          >
-            <div className={`flex items-center gap-2.5 rounded-2xl px-3 py-2.5 text-left sm:px-4 sm:py-3 ${glass}`}>
-              <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-brand-orange text-brand-navy">
-                <Icon className="h-4 w-4" />
-              </span>
-              <span>
-                <span className="block text-sm font-semibold leading-tight">{title}</span>
-                <span className="hidden text-[11px] text-brand-cream/55 sm:block">{sub}</span>
-              </span>
-            </div>
-          </motion.div>
-        ))}
       </div>
     </section>
   );

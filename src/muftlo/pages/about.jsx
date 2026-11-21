@@ -12,6 +12,7 @@ import {
 import "@/muftlo/About/about.css";
 import WorkflowSection from "@/muftlo/About/aboutPipeline";
 import AboutHero from "@/muftlo/About/AboutHero";
+import FounderSection from "@/muftlo/About/FounderSection";
 import { getSiteMedia } from "@/muftlo/site-media";
 
 export default function AboutPage() {
@@ -155,6 +156,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <FounderSection />
 
       <section
         id="why-choose"
