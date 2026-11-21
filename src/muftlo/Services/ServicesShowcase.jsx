@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { LayoutGroup, motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Link from "@/muftlo/next/link";
 import { Button } from "@/muftlo/ui/button";
@@ -49,15 +49,23 @@ export default function ServicesShowcase() {
   const activeService = services[activeIndex];
   const orderedServices = services.map((_, offset) => services[(activeIndex + offset) % services.length]);
 
+  const rowRef = useRef(null);
+
+  // Keep the large active card in view on small screens where the row scrolls.
   useEffect(() => {
-    const timer = window.setInterval(() => {
+    rowRef.current?.scrollTo({ left: 0, behavior: "smooth" });
+  }, [activeIndex]);
+
+  // Restart the 5s timer whenever the active card changes (auto or by click).
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
       setActiveIndex((index) => (index + 1) % services.length);
     }, 5000);
-    return () => window.clearInterval(timer);
-  }, []);
+    return () => window.clearTimeout(timer);
+  }, [activeIndex]);
 
   return (
-    <section aria-label="Explore our services" className="relative isolate flex h-[100svh] min-h-[100svh] max-h-[1000px] w-full overflow-hidden bg-brand-navy text-brand-cream">
+    <section aria-label="Explore our services" className="relative isolate flex min-h-[100svh] w-full overflow-hidden bg-brand-navy text-brand-cream">
       {services.map((service, index) => (
         <motion.img
           key={service.title}
@@ -73,7 +81,7 @@ export default function ServicesShowcase() {
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-r from-brand-navy/90 via-brand-navy/65 to-brand-navy/20" />
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-brand-navy/85 via-transparent to-brand-navy/20" />
 
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col justify-between px-5 pb-8 pt-12 sm:px-8 sm:pb-10 md:px-12 md:pb-14 md:pt-20 lg:px-16">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col justify-between px-5 pb-8 pt-28 sm:px-8 sm:pb-10 md:px-12 md:pb-12 md:pt-32 lg:px-16">
         <div className="max-w-2xl md:mt-auto md:mb-10">
           <motion.p
             key={`${activeService.title}-location`}
@@ -107,38 +115,55 @@ export default function ServicesShowcase() {
           </Button>
         </div>
 
-        <div className="-mx-5 mt-8 overflow-x-auto px-5 pb-2 sm:-mx-8 sm:px-8 md:mx-0 md:mt-0 md:px-0 md:pb-0 xl:overflow-visible">
-          <div className="flex w-max gap-3 md:gap-4 xl:w-full xl:justify-end">
-            {orderedServices.map((service, position) => {
-              const serviceIndex = services.findIndex((item) => item.title === service.title);
-              const isActive = serviceIndex === activeIndex;
-              return (
-                <motion.div
-                  key={service.title}
-                  initial={{ opacity: 0, y: 18 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.45, delay: position * 0.055 }}
-                  className={`group relative h-40 w-[112px] shrink-0 overflow-hidden rounded-md border transition-colors duration-300 sm:h-48 sm:w-[132px] md:h-56 md:w-[148px] xl:h-64 xl:w-[176px] ${isActive ? "border-brand-orange" : "border-brand-cream/40"}`}
-                >
-                  <Button
-                    type="button"
-                    variant="ghost"
-                    aria-pressed={isActive}
-                    aria-label={`Show ${service.title}`}
-                    onClick={() => setActiveIndex(serviceIndex)}
-                    className="group absolute inset-0 h-full w-full flex-col items-stretch justify-end whitespace-normal rounded-none p-0 text-left hover:bg-transparent"
+        <div ref={rowRef} className="-mx-5 mt-8 overflow-x-auto px-5 pb-2 [scrollbar-width:none] sm:-mx-8 sm:px-8 md:mx-0 md:mt-0 md:px-0 xl:overflow-visible">
+          <LayoutGroup>
+            <div className="flex w-max items-end gap-3 md:gap-4 xl:w-full xl:justify-end">
+              {orderedServices.map((service, position) => {
+                const serviceIndex = services.findIndex((item) => item.title === service.title);
+                const isActive = position === 0;
+                return (
+                  <motion.div
+                    key={service.title}
+                    layout
+                    transition={{ layout: { type: "spring", stiffness: 120, damping: 22 } }}
+                    className={`group relative shrink-0 overflow-hidden rounded-xl border ${
+                      isActive
+                        ? "h-52 w-[156px] border-brand-orange shadow-[0_20px_50px_-15px] shadow-brand-orange/50 sm:h-60 sm:w-[184px] md:h-72 md:w-[216px] xl:h-80 xl:w-[240px]"
+                        : "h-40 w-[112px] border-brand-cream/30 sm:h-48 sm:w-[132px] md:h-56 md:w-[148px] xl:h-64 xl:w-[160px]"
+                    }`}
                   >
-                    <img src={service.image} alt="" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                    <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/15 to-brand-navy/5" />
-                    <span className="relative z-10 mb-2 ml-2 text-left sm:mb-3 sm:ml-3">
-                      <span className="block text-[9px] font-semibold uppercase tracking-[0.08em] text-brand-orange sm:text-[10px]">0{serviceIndex + 1}</span>
-                      <span className="mt-1 block text-xs font-semibold leading-tight text-brand-cream sm:text-sm">{service.title}</span>
-                    </span>
-                  </Button>
-                </motion.div>
-              );
-            })}
-          </div>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      aria-pressed={isActive}
+                      aria-label={`Show ${service.title}`}
+                      onClick={() => setActiveIndex(serviceIndex)}
+                      className="group absolute inset-0 h-full w-full flex-col items-stretch justify-end whitespace-normal rounded-none p-0 text-left hover:bg-transparent"
+                    >
+                      <img src={service.image} alt="" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                      <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/20 to-brand-navy/5" />
+                      <motion.span layout="position" className="relative z-10 mb-3 ml-3 mr-3 text-left sm:mb-4 sm:ml-4">
+                        <span className="block text-[10px] font-semibold uppercase tracking-[0.1em] text-brand-orange sm:text-xs">0{serviceIndex + 1}</span>
+                        <span className={`mt-1 block font-semibold leading-tight text-brand-cream ${isActive ? "text-sm sm:text-base md:text-lg" : "text-xs sm:text-sm"}`}>{service.title}</span>
+                        {isActive && <span className="mt-1 hidden text-[11px] text-brand-cream/70 sm:block">{service.location}</span>}
+                      </motion.span>
+                      {isActive && (
+                        <span aria-hidden="true" className="absolute inset-x-0 bottom-0 z-10 h-1 bg-brand-cream/20">
+                          <motion.span
+                            key={activeIndex}
+                            className="block h-full origin-left bg-brand-orange"
+                            initial={{ scaleX: 0 }}
+                            animate={{ scaleX: 1 }}
+                            transition={{ duration: 5, ease: "linear" }}
+                          />
+                        </span>
+                      )}
+                    </Button>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </LayoutGroup>
         </div>
       </div>
     </section>

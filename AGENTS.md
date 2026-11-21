@@ -30,5 +30,5 @@ use the editor.
 <!-- LOVABLE:END -->
 
 - Keep imported R&D site pages and shared UI under `src/muftlo`, with URL pages in `src/routes`, so source presentation remains intact while TanStack owns routing.
-- Keep service-page opening showcase isolated in `src/muftlo/Services`; replacing it must not alter the existing service sections below.
+- Services page = `ServicesShowcase` (opening slider) + `ServiceCategories` (topic sections), both in `src/muftlo/Services`; service topics and subtopics live as data in `ServiceCategories` so one card design renders every category.
 - Site images and videos are stored as Lovable project assets (.asset.json pointers), not hotlinked from third-party hosts, because outside links broke after import.
