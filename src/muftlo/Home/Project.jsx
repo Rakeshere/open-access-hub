@@ -28,7 +28,7 @@ const projects = [
     title: "Search Abode",
     category: "Digital Marketing & Social Media Strategy",
     image:
-      "https://www.searchabode.com/wp-content/uploads/2025/03/searchabode-the-best-real-estate-agent-in-jaipur.jpg",
+      "/__l5e/assets-v1/949eb080-d688-4003-b9dd-0eff702065e9/realestate.jpg",
     metrics: [
       {
         value: "4x Growth",

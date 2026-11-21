@@ -144,7 +144,7 @@ export default function MarketingSection() {
             <div className="flex flex-col gap-4">
               <div className="relative group rounded-lg h-48 sm:h-56 md:h-64 overflow-hidden">
                 <video
-                  src="https://res.cloudinary.com/dvw7dakxm/video/upload/v1764189959/bts_reel_muftloXsearch_abode_3.2_loy9ed.mp4"
+                  src="/__l5e/assets-v1/f00670b1-3a9d-46c8-b959-5f47064b6002/bts-reel.mp4"
                   className="w-full h-full object-cover"
                   autoPlay
                   muted
@@ -155,7 +155,7 @@ export default function MarketingSection() {
 
               <div className="relative group rounded-lg h-36 sm:h-40 md:h-44 overflow-hidden">
                 <video
-                  src="https://res.cloudinary.com/dvw7dakxm/video/upload/v1764190172/search_abode_specific_v24.3_ipou7u.mp4"
+                  src="/__l5e/assets-v1/37dc010a-eb1e-42b0-8ac5-89580957ed0b/search-abode-24.mp4"
                   className="w-full h-full object-cover"
                   autoPlay
                   muted
@@ -168,7 +168,7 @@ export default function MarketingSection() {
             {/* Column 2 */}
             <div className="relative group rounded-lg h-96 sm:h-[28rem] md:h-112 overflow-hidden">
               <video
-                src="https://res.cloudinary.com/dvw7dakxm/video/upload/v1764190220/search_abode_specific_v26.1_f6esrk.mp4"
+                src="/__l5e/assets-v1/5f7b2a1c-7acb-4db3-9d06-21a80c8c3229/search-abode-26.mp4"
                 className="w-full h-full object-cover"
                 autoPlay
                 muted
@@ -181,7 +181,7 @@ export default function MarketingSection() {
             <div className="flex flex-col gap-4">
               <div className="relative group rounded-lg h-36 sm:h-40 md:h-44 overflow-hidden">
                 <video
-                  src="https://res.cloudinary.com/dvw7dakxm/video/upload/v1764192394/GYM_1_reel_nazcrg.mp4"
+                  src="/__l5e/assets-v1/40fff7a3-0bb5-478e-b1b3-fc8a73c2f886/gym-reel.mp4"
                   className="w-full h-full object-cover"
                   autoPlay
                   muted
@@ -192,7 +192,7 @@ export default function MarketingSection() {
 
               <div className="relative group rounded-lg h-48 sm:h-56 md:h-64 overflow-hidden">
                 <video
-                  src="https://res.cloudinary.com/dvw7dakxm/video/upload/v1764190373/Soni_Bagh_1.3_reel_zq2by1.mp4"
+                  src="/__l5e/assets-v1/b0e57753-2246-4b23-bb85-5f173fbca491/soni-bagh.mp4"
                   className="w-full h-full object-cover"
                   autoPlay
                   muted

@@ -8,25 +8,25 @@ const ChooseUs = () => {
     {
       title: "Transform Your Brand Presence",
       desc: "Digital strategies crafted to boost your visibility and engagement. Experience real growth with marketing built for impact.",
-      img: "https://img.freepik.com/free-vector/marketing-promotional-campaign-brand-awareness-building-branded-workshop-workshop-organized-by-brand-useful-marketing-event-concept_335657-115.jpg?semt=ais_hybrid&w=740&q=80",
+      img: "/__l5e/assets-v1/ad5cb184-0ce4-4013-9116-ba3c11fa2d67/b2b20212b2.jpg",
       btn: "Explore More",
     },
     {
       title: "Boost Visibility with Powerful SEO",
       desc: "Rank higher, get discovered, and attract the right audience. Smart optimization that drives consistent, organic growth.",
-      img: "https://mydmi.imgix.net/shutterstock_2502022545.jpg?crop=edges&fit=crop&fm=auto&h=1260&ixlib=php-4.1.0&q=40&w=2400&s=44623a2c5aabd16041862c1348d62b1a",
+      img: "/__l5e/assets-v1/f16074b7-89ed-4269-b2c1-0b78f7a4a4a2/ba1fe635d3.jpg",
       btn: "Explore More",
     },
     {
       title: "Tell Your Story with Stunning Photo & Video",
       desc: "High-quality visuals that elevate your brand identity. Create lasting impressions through cinematic content.",
-      img: "https://static.vecteezy.com/system/resources/thumbnails/038/904/859/small/ai-generated-silhouette-images-of-video-production-behind-the-scenes-making-of-tv-commercial-movie-that-film-crew-team-lightman-photo.jpg",
+      img: "/__l5e/assets-v1/c6bbed36-59b9-42ad-b12b-f7406153603e/efcda86d67.jpg",
       btn: "Explore More",
     },
     {
       title: "Convert Viewers into Leads with Powerful Visuals",
       desc: "Engaging photo & video content that builds trust. Showcase your brand and inspire action instantly.",
-      img: "https://www.artonicweb.com/wp-content/uploads/2024/08/artonic-photography-in-digital-marketing.jpg",
+      img: "/__l5e/assets-v1/e91d7d00-617d-4bdb-9f9a-8a030024c6f6/5b30f830cf.jpg",
       btn: "Explore More",
     },
   ];

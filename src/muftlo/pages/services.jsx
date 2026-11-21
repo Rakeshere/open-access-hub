@@ -51,7 +51,7 @@ export default function ServicesPage() {
       advantages:
         "Improves search rankings, increases organic reach, and enhances brand credibility by making your site more authoritative and trustworthy.",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGPv3CJNXhIhPTMqJy0Aycy5ibjxjGJBsvoQ&s",
+        "/__l5e/assets-v1/8d345536-3133-4510-81df-a4523ff4b58b/7ebc0250c9.jpg",
       color: "bg-blue-50",
     },
     {
@@ -61,7 +61,7 @@ export default function ServicesPage() {
       advantages:
         "Provides instant visibility on search engines, drives qualified traffic, and generates quick results to complement long-term SEO efforts.",
       image:
-        "https://www.pixartprinting.co.uk/blog/wp-content/uploads/2022/10/Cover.Search-engine-marketing.jpg",
+        "/__l5e/assets-v1/ac6db227-42c7-4163-9c9b-a1c03439061b/695cd4556f.jpg",
       color: "bg-indigo-50",
     },
     {
@@ -70,7 +70,7 @@ export default function ServicesPage() {
         "SMM builds brand presence across social media platforms, fostering engagement and creating a loyal audience.",
       advantages:
         "Enhances brand recognition, facilitates direct interaction with your audience, and supports targeted ad campaigns for specific demographics.",
-      image: "https://webtraffic.agency/uploads/blog/blog240624044117.jpg",
+      image: "/__l5e/assets-v1/54f93ce8-ec1b-4e82-8a69-29ba51dca4e2/b205afbf5d.jpg",
       color: "bg-purple-50",
     },
     {
@@ -80,7 +80,7 @@ export default function ServicesPage() {
       advantages:
         "Delivers measurable ROI, provides precise targeting options, and boosts visibility among ready-to-buy audiences.",
       image:
-        "https://www.dicslaxminagar.com/blog/wp-content/uploads/2024/05/How-to-Promote-Your-Online-Courses-With-Google-Ads.png",
+        "/__l5e/assets-v1/64fcfe11-a23b-4b45-86be-301d8923e03b/a6a262b356.png",
       color: "bg-green-50",
     },
     {
@@ -90,7 +90,7 @@ export default function ServicesPage() {
       advantages:
         "Builds a strong brand identity, fosters customer trust, and differentiates your business from competitors.",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2T8bo2aBGIN0a89w1H33mHvM7_ihd2An2WQ&s",
+        "/__l5e/assets-v1/eee16c9b-d0b5-4d74-81e5-8ed19c50f4a7/8d4e678f1e.jpg",
       color: "bg-pink-50",
     },
     {
@@ -100,7 +100,7 @@ export default function ServicesPage() {
       advantages:
         "Offers flexible budgeting, measurable results, and drives immediate traffic that can lead to high conversions.",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUbo3dxdyB1wnI83R_0za0bWN64v0RKJ1hBw&s",
+        "/__l5e/assets-v1/ab32735b-4232-49c6-8bf5-2de5ed0b148b/b7a2416d74.jpg",
       color: "bg-orange-50",
     },
   ];
@@ -111,7 +111,7 @@ export default function ServicesPage() {
       description:
         "High-quality product images that emphasize details, features, and aesthetics, ideal for e-commerce, social media, and ad campaigns.",
       image:
-        "https://zebrastudio.org/wp-content/uploads/2022/06/photography-g14011171a_1920-min-1024x683.jpg",
+        "/__l5e/assets-v1/bd6b9f8a-ce75-4f7a-9e06-4b5c5047934a/fc3f6593ab.jpg",
       color: "bg-blue-50",
     },
     {
@@ -119,7 +119,7 @@ export default function ServicesPage() {
       description:
         "Professional property photos that showcase real estate in its best light, helping properties stand out in a competitive market.",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpNlMgt0CEskaf6lyS1VqvzM-0BWRdQ-Zf_A&s",
+        "/__l5e/assets-v1/04230dc9-2e42-4b6b-b8ef-64cb1a9e313c/98b81e0de0.jpg",
       color: "bg-green-50",
     },
     {
@@ -127,7 +127,7 @@ export default function ServicesPage() {
       description:
         "Professional shoots that capture corporate events, team photos, and office environments, building a trustworthy brand image.",
       image:
-        "https://jamesmaherphotography.com/wp-content/uploads/2022/04/business-corporate-portraits-1.webp",
+        "/__l5e/assets-v1/f4899feb-16b7-4ae5-b247-041d341d25de/fbfe5bd503.webp",
       color: "bg-indigo-50",
     },
     {
@@ -135,7 +135,7 @@ export default function ServicesPage() {
       description:
         "From explainer videos to brand stories, we create compelling video content that engages audiences and drives results.",
       image:
-        "https://cdn.prod.website-files.com/685be7dcd32275d383065239/685be7dcd32275d3830679a5_Blog%20Cover_04_2023_%2015%20Video%20Production%20Tips%20for%20Making%20Engaging%20Professional%20Videos.webp",
+        "/__l5e/assets-v1/81e5e77c-4e95-4edb-8da7-9d86bd0fc727/ca2d9c5e60.webp",
       color: "bg-purple-50",
     },
     {
@@ -143,7 +143,7 @@ export default function ServicesPage() {
       description:
         "Custom photo and video content optimized for social media platforms, designed to engage followers and build brand presence.",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR31LrMNVYPPj1Vex9Zpuzk_oaghQIKlRJ1Fg&s",
+        "/__l5e/assets-v1/d219e85a-6fcb-4842-bf7c-ca37038fdbee/ffe4c51874.jpg",
       color: "bg-pink-50",
     },
     {
@@ -151,7 +151,7 @@ export default function ServicesPage() {
       description:
         "Comprehensive photo sessions for personal or professional portfolios, including headshots, modeling, and creative projects.",
       image:
-        "https://i.etsystatic.com/20116942/r/il/ebb4be/6607106719/il_fullxfull.6607106719_ha19.jpg",
+        "/__l5e/assets-v1/b1798017-a7ef-4316-831b-ae88b397c871/16a6148899.jpg",
       color: "bg-orange-50",
     },
   ];
@@ -164,7 +164,7 @@ export default function ServicesPage() {
       advantages:
         "Delivers a cohesive, efficient website, provides a complete and functional digital experience, and supports future scalability.",
       image:
-        "https://sklc-tinymce-2021.s3.amazonaws.com/comp/2022/08/62_1659690052.png",
+        "/__l5e/assets-v1/1cd6c6da-6690-4e71-b86f-a3f7bb8d7de7/fullstack.jpg",
       color: "bg-blue-50",
     },
     {
@@ -174,7 +174,7 @@ export default function ServicesPage() {
       advantages:
         "Boosts online sales, enhances customer experience, and integrates payment and inventory management solutions.",
       image:
-        "https://i0.wp.com/www.magetop.com/blog/wp-content/uploads/2022/06/E-Commerce-Development-Bloom-IT.jpg?resize=800%2C445&ssl=1",
+        "/__l5e/assets-v1/43d32e67-4905-4e7e-a10c-347a25747283/30349bdd63.jpg",
       color: "bg-green-50",
     },
     {
@@ -184,7 +184,7 @@ export default function ServicesPage() {
       advantages:
         "Simplifies content updates, reduces maintenance costs, and empowers clients to manage their website without technical expertise.",
       image:
-        "https://www.scnsoft.com/application-development/cms-development/cms-development-services-cover-picture-03.svg",
+        "/__l5e/assets-v1/a0020e6a-a8c9-4532-865c-35c1f56e70c7/cms.jpg",
       color: "bg-purple-50",
     },
     {
@@ -194,7 +194,7 @@ export default function ServicesPage() {
       advantages:
         "Improves search visibility, attracts organic traffic, and strengthens your online presence.",
       image:
-        "https://cdn.botpenguin.com/assets/website/Search_Engine_Optimization_d547319792.webp",
+        "/__l5e/assets-v1/72a5fbc1-9532-4fd2-ad2d-14e979bc7a78/0a7bc3f049.webp",
       color: "bg-orange-50",
     },
   ];
