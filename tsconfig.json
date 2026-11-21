@@ -7,7 +7,6 @@
     "eslint.config.js"
   ],
   "compilerOptions": {
-    "allowJs": true,
     "target": "ES2022",
     "jsx": "react-jsx",
     "module": "ESNext",

@@ -2,8 +2,8 @@
 
 # North star
 
-Businesses get their software and websites built by R&D Software Solutions
+Businesses get their brands built and grown by the agency
 
 ## Metric
 
-Prospective clients who submit an enquiry or contact form each week
+Prospective clients who submit the enquiry form each month

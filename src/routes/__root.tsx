@@ -82,15 +82,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "R&D Software Solutions" },
-      { name: "description", content: "R&D Software Solutions is a Jaipur-based creative studio built on ideas, design, and storytelling." },
+      { title: "R&D Software Solutions — Jaipur Digital Marketing Studio" },
+      {
+        name: "description",
+        content:
+          "R&D Software Solutions is a Jaipur-based creative studio for digital marketing, design, and storytelling.",
+      },
       { name: "author", content: "R&D Software Solutions" },
+      {
+        property: "og:title",
+        content: "R&D Software Solutions — Jaipur Digital Marketing Studio",
+      },
+      {
+        property: "og:description",
+        content:
+          "R&D Software Solutions is a Jaipur-based creative studio for digital marketing, design, and storytelling.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
@@ -110,7 +128,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="antialiased">
+      <body>
         {children}
         <Scripts />
       </body>

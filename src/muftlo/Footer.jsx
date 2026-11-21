@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 border-b border-gray-700 pb-10">
         <div className="-mt-3">
           <div className="flex items-center gap-2 mb-2">
-            <span className="inline-flex rounded-xl bg-brand-cream px-3 py-1.5"><img src={rdLogo.url} alt="R&D Software Solutions" className="h-11 w-auto" /></span>
+            <img src={rdLogo.url} alt="R&D Software Solutions" className="h-14 w-auto" />
             <h1 className="text-xl font-bold leading-tight text-white">R&amp;D <span className="text-brand-orange">Software Solutions</span></h1>
           </div>
 

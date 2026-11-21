@@ -7,9 +7,28 @@
 >
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
+
+## What Lovable manages
+
+Rules outside this block are the project's own. Change the pieces below in
+Lovable, not by hand. With the [Lovable MCP](https://mcp.lovable.dev)
+connected, `send_message` asks Lovable to do it; otherwise ask the user to
+use the editor.
+
+- **Database.** Do not add or edit `supabase/migrations/` or `drizzle/`.
+  Ask Lovable to change the schema.
+- **Generated files.** Do not edit a file whose header says it is automatically
+  generated.
+- **AI gateway.** Keep model calls on Lovable's gateway, and keep
+  `LOVABLE_API_KEY` out of browser code.
+- **Connectors.** Lovable provides native connectors. `list_connectors` shows
+  which are enabled; `add_connector` only returns the dashboard link. When a
+  connector is enabled, calls go through the connector gateway and need
+  `LOVABLE_API_KEY`. When Lovable does not provide one, users can bring their
+  own key and store it in Secrets.
+- **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
 
-- Imported Muftlo site code lives in src/muftlo (pages in src/muftlo/pages, thin route files in src/routes); src/muftlo/next/* shims replace next/link, next/image, next/navigation so ported components stay close to the original.
-- Keep lucide-react pinned at 0.542.0: newer versions removed brand icons (Facebook, Instagram, etc.) the footer uses.
-- The homepage brand carousel stays in the existing Slider module and reuses existing customer images and testimonials, keeping this section independent from the other homepage sections.
-- Site images and videos are stored as Lovable project assets (src/assets/**/*.asset.json or /__l5e/assets-v1 URLs), not hotlinked from third-party hosts, because outside links broke after import.
+- Keep imported R&D site pages and shared UI under `src/muftlo`, with URL pages in `src/routes`, so source presentation remains intact while TanStack owns routing.
+- Keep service-page opening showcase isolated in `src/muftlo/Services`; replacing it must not alter the existing service sections below.
+- Site images and videos are stored as Lovable project assets (.asset.json pointers), not hotlinked from third-party hosts, because outside links broke after import.

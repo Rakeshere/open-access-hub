@@ -13,7 +13,8 @@ import {
 import { Button } from "@/muftlo/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { ThreeDMarqueeDemoSecond } from "@/muftlo/Services/ThreeDMarquee";
-import ChooseUs from "@/muftlo/Services/CarouselNow";
+import ServicesShowcase from "@/muftlo/Services/ServicesShowcase";
+import { getSiteMedia } from "@/muftlo/site-media";
 
 export default function ServicesPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -50,8 +51,7 @@ export default function ServicesPage() {
         "SEO enhances your website's visibility on search engines, bringing in organic traffic and helping potential customers find you easily.",
       advantages:
         "Improves search rankings, increases organic reach, and enhances brand credibility by making your site more authoritative and trustworthy.",
-      image:
-        "/__l5e/assets-v1/8d345536-3133-4510-81df-a4523ff4b58b/7ebc0250c9.jpg",
+      image: getSiteMedia("Cover.Search-engine-marketing.jpg"),
       color: "bg-blue-50",
     },
     {
@@ -60,8 +60,7 @@ export default function ServicesPage() {
         "SEM combines paid search ads with keyword targeting to place your brand at the top of search results.",
       advantages:
         "Provides instant visibility on search engines, drives qualified traffic, and generates quick results to complement long-term SEO efforts.",
-      image:
-        "/__l5e/assets-v1/ac6db227-42c7-4163-9c9b-a1c03439061b/695cd4556f.jpg",
+      image: getSiteMedia("Cover.Search-engine-marketing.jpg"),
       color: "bg-indigo-50",
     },
     {
@@ -70,7 +69,7 @@ export default function ServicesPage() {
         "SMM builds brand presence across social media platforms, fostering engagement and creating a loyal audience.",
       advantages:
         "Enhances brand recognition, facilitates direct interaction with your audience, and supports targeted ad campaigns for specific demographics.",
-      image: "/__l5e/assets-v1/54f93ce8-ec1b-4e82-8a69-29ba51dca4e2/b205afbf5d.jpg",
+      image: getSiteMedia("blog240624044117.jpg"),
       color: "bg-purple-50",
     },
     {
@@ -79,8 +78,7 @@ export default function ServicesPage() {
         "Our team manages Google Ads campaigns to attract high-intent traffic using strategic targeting and budget optimization.",
       advantages:
         "Delivers measurable ROI, provides precise targeting options, and boosts visibility among ready-to-buy audiences.",
-      image:
-        "/__l5e/assets-v1/64fcfe11-a23b-4b45-86be-301d8923e03b/a6a262b356.png",
+      image: getSiteMedia("google-ads-courses.png"),
       color: "bg-green-50",
     },
     {
@@ -89,8 +87,7 @@ export default function ServicesPage() {
         "Branding services encompass logo design, brand strategy, and content creation to establish a cohesive identity.",
       advantages:
         "Builds a strong brand identity, fosters customer trust, and differentiates your business from competitors.",
-      image:
-        "/__l5e/assets-v1/eee16c9b-d0b5-4d74-81e5-8ed19c50f4a7/8d4e678f1e.jpg",
+      image: getSiteMedia("Logo-Pastelli.png"),
       color: "bg-pink-50",
     },
     {
@@ -99,8 +96,7 @@ export default function ServicesPage() {
         "PPC ads target specific keywords, placing your business in front of a relevant audience and driving immediate traffic.",
       advantages:
         "Offers flexible budgeting, measurable results, and drives immediate traffic that can lead to high conversions.",
-      image:
-        "/__l5e/assets-v1/ab32735b-4232-49c6-8bf5-2de5ed0b148b/b7a2416d74.jpg",
+      image: getSiteMedia("Google-Ads.png"),
       color: "bg-orange-50",
     },
   ];
@@ -110,48 +106,42 @@ export default function ServicesPage() {
       title: "Product Photography",
       description:
         "High-quality product images that emphasize details, features, and aesthetics, ideal for e-commerce, social media, and ad campaigns.",
-      image:
-        "/__l5e/assets-v1/bd6b9f8a-ce75-4f7a-9e06-4b5c5047934a/fc3f6593ab.jpg",
+      image: getSiteMedia("photography-g14011171a.jpg"),
       color: "bg-blue-50",
     },
     {
       title: "Real Estate Photography",
       description:
         "Professional property photos that showcase real estate in its best light, helping properties stand out in a competitive market.",
-      image:
-        "/__l5e/assets-v1/04230dc9-2e42-4b6b-b8ef-64cb1a9e313c/98b81e0de0.jpg",
+      image: getSiteMedia("Reliant.jpg"),
       color: "bg-green-50",
     },
     {
       title: "Corporate Photography",
       description:
         "Professional shoots that capture corporate events, team photos, and office environments, building a trustworthy brand image.",
-      image:
-        "/__l5e/assets-v1/f4899feb-16b7-4ae5-b247-041d341d25de/fbfe5bd503.webp",
+      image: getSiteMedia("business-corporate-portraits.webp"),
       color: "bg-indigo-50",
     },
     {
       title: "Video Production",
       description:
         "From explainer videos to brand stories, we create compelling video content that engages audiences and drives results.",
-      image:
-        "/__l5e/assets-v1/81e5e77c-4e95-4edb-8da7-9d86bd0fc727/ca2d9c5e60.webp",
+      image: getSiteMedia("video-production-tips.webp"),
       color: "bg-purple-50",
     },
     {
       title: "Social Media Content",
       description:
         "Custom photo and video content optimized for social media platforms, designed to engage followers and build brand presence.",
-      image:
-        "/__l5e/assets-v1/d219e85a-6fcb-4842-bf7c-ca37038fdbee/ffe4c51874.jpg",
+      image: getSiteMedia("The Wood A.jpg"),
       color: "bg-pink-50",
     },
     {
       title: "Portfolio Photography",
       description:
         "Comprehensive photo sessions for personal or professional portfolios, including headshots, modeling, and creative projects.",
-      image:
-        "/__l5e/assets-v1/b1798017-a7ef-4316-831b-ae88b397c871/16a6148899.jpg",
+      image: getSiteMedia("il_fullxfull.6607106719_ha19.jpg"),
       color: "bg-orange-50",
     },
   ];
@@ -163,8 +153,7 @@ export default function ServicesPage() {
         "Development of front-end and back-end systems for a seamless user experience.",
       advantages:
         "Delivers a cohesive, efficient website, provides a complete and functional digital experience, and supports future scalability.",
-      image:
-        "/__l5e/assets-v1/1cd6c6da-6690-4e71-b86f-a3f7bb8d7de7/fullstack.jpg",
+      image: getSiteMedia("image.png"),
       color: "bg-blue-50",
     },
     {
@@ -173,8 +162,7 @@ export default function ServicesPage() {
         "Custom-built e-commerce sites that offer a user-friendly shopping experience and streamlined checkout processes.",
       advantages:
         "Boosts online sales, enhances customer experience, and integrates payment and inventory management solutions.",
-      image:
-        "/__l5e/assets-v1/43d32e67-4905-4e7e-a10c-347a25747283/30349bdd63.jpg",
+      image: getSiteMedia("E-Commerce-Development-Bloom-IT.jpg"),
       color: "bg-green-50",
     },
     {
@@ -183,8 +171,7 @@ export default function ServicesPage() {
         "Development of websites powered by CMS platforms like WordPress, making it easy for clients to manage their content.",
       advantages:
         "Simplifies content updates, reduces maintenance costs, and empowers clients to manage their website without technical expertise.",
-      image:
-        "/__l5e/assets-v1/a0020e6a-a8c9-4532-865c-35c1f56e70c7/cms.jpg",
+      image: getSiteMedia("webDev.jpg"),
       color: "bg-purple-50",
     },
     {
@@ -193,15 +180,14 @@ export default function ServicesPage() {
         "Built-in SEO strategies to ensure your website is optimized for search engines from day one.",
       advantages:
         "Improves search visibility, attracts organic traffic, and strengthens your online presence.",
-      image:
-        "/__l5e/assets-v1/72a5fbc1-9532-4fd2-ad2d-14e979bc7a78/0a7bc3f049.webp",
+      image: getSiteMedia("Search_Engine_Optimization.webp"),
       color: "bg-orange-50",
     },
   ];
 
   return (
     <div className="min-h-screen">
-      <ChooseUs />
+      <ServicesShowcase />
 
       <section className="py-20 px-6 md:px-4">
         <div className="max-w-7xl mx-auto">

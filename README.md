@@ -1,12 +1,12 @@
-# R&D
+# r&D
 
-open this project in best way
+open this zip  and live and fix all the things , also i say something to say , to make sure everything will match color combination, typoggraphy , everything same  , nothing change untill i say.
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/39795eb2-211a-437e-a388-60c98ec38434).
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/7ef31de2-f8c6-4fa2-93b2-79bea3a4eac0).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
 - **Stay in sync**: every change made in Lovable is committed straight to this repository.
