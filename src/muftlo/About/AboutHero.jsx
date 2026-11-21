@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowRight,
   ArrowUpRight,
   Bot,
   Camera,
+  ChevronLeft,
+  ChevronRight,
   Code2,
   Megaphone,
   Smartphone,
@@ -25,101 +27,119 @@ const glass =
   "border border-brand-cream/15 bg-brand-cream/[0.06] backdrop-blur-xl shadow-[0_24px_60px_-28px_rgba(0,0,0,0.7)]";
 
 const services = [
-  { icon: Megaphone, label: "Digital Marketing", note: "SEO, ads & social" },
-  { icon: Camera, label: "Photo & Video", note: "Shoots, reels & films" },
-  { icon: Code2, label: "Web Development", note: "Fast, modern websites" },
-  { icon: Bot, label: "AI Automation", note: "Chatbots & workflows" },
-  { icon: Smartphone, label: "App Development", note: "Android & iOS apps" },
+  { icon: Megaphone, label: "Digital Marketing", note: "SEO, ads & social", text: "Campaigns that bring the right people to your brand." },
+  { icon: Camera, label: "Photo & Video", note: "Shoots, reels & films", text: "Visual stories that make people stop and watch." },
+  { icon: Code2, label: "Web Development", note: "Fast, modern websites", text: "Clean, quick websites built to turn visitors into clients." },
+  { icon: Bot, label: "AI Automation", note: "Chatbots & workflows", text: "Smart tools that save your team hours every week." },
+  { icon: Smartphone, label: "App Development", note: "Android & iOS apps", text: "Easy-to-use apps your customers love to open." },
 ];
 
-/* "What we do" card: rows highlight one by one, each opens the services page */
+const SLIDE_MS = 3200;
+
+/* "What we do": one service at a time, flips to the next automatically */
 function WhatWeDo() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
 
   useEffect(() => {
     if (paused) return;
-    const t = setTimeout(() => setActive((a) => (a + 1) % services.length), 2200);
+    const t = setTimeout(() => setActive((a) => (a + 1) % services.length), SLIDE_MS);
     return () => clearTimeout(t);
   }, [active, paused]);
 
+  const go = (step) => setActive((a) => (a + step + services.length) % services.length);
+  const { icon: Icon, label, note, text } = services[active];
+
   return (
     <motion.div
-      {...fadeUp(0.8)}
+      {...fadeUp(0.3)}
+      onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
-      className={`absolute right-[4%] top-[36%] hidden w-[17.5rem] overflow-hidden rounded-3xl lg:block xl:right-[6%] ${glass}`}
+      className="order-last mx-auto w-full max-w-sm px-5 pb-12 lg:absolute lg:bottom-[12%] lg:right-[5%] lg:order-none lg:w-[20rem] lg:max-w-none lg:px-0 lg:pb-0 xl:right-[7%]"
     >
-      <span className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-brand-orange to-transparent" />
-
-      <div className="flex items-center justify-between px-5 pb-3 pt-5">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-cream/55">
+      <div className="mb-6 flex items-center justify-between">
+        <span className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-brand-cream/55">
+          <span className="h-px w-10 bg-brand-orange" />
           What we do
-        </p>
-        <span className="rounded-full bg-brand-orange/15 px-2.5 py-0.5 text-[11px] font-bold text-brand-orange">
+        </span>
+        <span className="text-xs font-semibold tabular-nums text-brand-cream/50">
+          <span className="text-brand-orange">{String(active + 1).padStart(2, "0")}</span>
+          {" / "}
           {String(services.length).padStart(2, "0")}
         </span>
       </div>
 
-      <ul className="px-2 pb-2">
-        {services.map(({ icon: Icon, label, note }, i) => {
-          const on = i === active;
-          return (
-            <motion.li
-              key={label}
-              initial={{ opacity: 0, x: 16 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 1 + i * 0.1, ease }}
-              onMouseEnter={() => {
-                setPaused(true);
-                setActive(i);
-              }}
-            >
-              <Link
-                href="/services"
-                className="relative flex items-center gap-3 rounded-2xl px-3 py-2.5"
+      <div className={`relative overflow-hidden rounded-3xl px-5 pb-7 pt-5 [perspective:900px] ${glass}`}>
+        <span className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-brand-orange to-transparent" />
+
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={label}
+            initial={{ opacity: 0, rotateX: -80, y: 14 }}
+            animate={{ opacity: 1, rotateX: 0, y: 0 }}
+            exit={{ opacity: 0, rotateX: 80, y: -14 }}
+            transition={{ duration: 0.5, ease }}
+            style={{ transformOrigin: "50% 50% -20px" }}
+          >
+            <Link href="/services" className="group flex items-start gap-4">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-orange text-brand-navy shadow-[0_10px_30px_-10px_rgba(247,147,30,0.8)]">
+                <Icon className="h-5 w-5" />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="flex items-center justify-between gap-2">
+                  <span className="text-lg font-bold leading-tight tracking-tight">{label}</span>
+                  <ArrowUpRight className="h-4 w-4 shrink-0 text-brand-orange transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </span>
+                <span className="mt-0.5 block text-xs font-medium text-brand-orange/90">{note}</span>
+                <span className="mt-2 block text-[13px] leading-snug text-brand-cream/60">{text}</span>
+              </span>
+            </Link>
+          </motion.div>
+        </AnimatePresence>
+
+        <div className="mt-5 flex items-center gap-3">
+          <div className="flex flex-1 gap-1.5">
+            {services.map((s, i) => (
+              <button
+                key={s.label}
+                type="button"
+                aria-label={`Show ${s.label}`}
+                onClick={() => setActive(i)}
+                className="relative h-1 flex-1 overflow-hidden rounded-full bg-brand-cream/15"
               >
-                {on && (
+                {i < active && <span className="absolute inset-0 bg-brand-orange/60" />}
+                {i === active && (
                   <motion.span
-                    layoutId="what-we-do-active"
-                    transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                    className="absolute inset-0 rounded-2xl border border-brand-orange/30 bg-brand-orange/10"
+                    key={`${active}-${paused}`}
+                    className="absolute inset-y-0 left-0 bg-brand-orange"
+                    initial={{ width: paused ? "100%" : "0%" }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: paused ? 0 : SLIDE_MS / 1000, ease: "linear" }}
                   />
                 )}
-                <span
-                  className={`relative flex h-9 w-9 shrink-0 items-center justify-center rounded-xl transition-colors duration-300 ${
-                    on ? "bg-brand-orange text-brand-navy" : "bg-brand-cream/[0.07] text-brand-orange"
-                  }`}
-                >
-                  <Icon className="h-4 w-4" />
-                </span>
-                <span className="relative min-w-0 flex-1">
-                  <span className="block text-sm font-semibold leading-tight">{label}</span>
-                  <span
-                    className={`block text-[11px] leading-tight transition-colors duration-300 ${
-                      on ? "text-brand-cream/70" : "text-brand-cream/40"
-                    }`}
-                  >
-                    {note}
-                  </span>
-                </span>
-                <ArrowUpRight
-                  className={`relative h-4 w-4 shrink-0 transition-all duration-300 ${
-                    on ? "translate-x-0 text-brand-orange opacity-100" : "-translate-x-1 opacity-0"
-                  }`}
-                />
-              </Link>
-            </motion.li>
-          );
-        })}
-      </ul>
-
-      <Link
-        href="/services"
-        className="group flex items-center justify-between border-t border-brand-cream/10 px-5 py-3.5 text-xs font-semibold text-brand-cream/70 transition-colors hover:text-brand-orange"
-      >
-        Explore all services
-        <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-      </Link>
+              </button>
+            ))}
+          </div>
+          <div className="flex gap-1.5">
+            <button
+              type="button"
+              aria-label="Previous service"
+              onClick={() => go(-1)}
+              className="flex h-7 w-7 items-center justify-center rounded-full border border-brand-cream/15 text-brand-cream/70 transition-colors hover:border-brand-orange hover:text-brand-orange"
+            >
+              <ChevronLeft className="h-3.5 w-3.5" />
+            </button>
+            <button
+              type="button"
+              aria-label="Next service"
+              onClick={() => go(1)}
+              className="flex h-7 w-7 items-center justify-center rounded-full border border-brand-cream/15 text-brand-cream/70 transition-colors hover:border-brand-orange hover:text-brand-orange"
+            >
+              <ChevronRight className="h-3.5 w-3.5" />
+            </button>
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 }
