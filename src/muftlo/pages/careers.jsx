@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ArrowRight, Briefcase, Users, Zap } from "lucide-react";
+import CareersHero from "@/muftlo/Careers/CareersHero";
 
 export default function CareerPage() {
   const [form, setForm] = useState({
@@ -123,46 +124,9 @@ export default function CareerPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
-      <section className="relative min-h-[90vh] flex items-center justify-center px-6">
-        <div className="absolute inset-0 pointer-events-none">
-          <motion.div
-            className="absolute top-10 left-1/3 w-72 h-72 bg-blue-500/15 rounded-full blur-3xl"
-            animate={{ y: [0, 40, 0] }}
-            transition={{ duration: 10, repeat: Infinity }}
-          />
-          <motion.div
-            className="absolute bottom-10 right-1/3 w-80 h-80 bg-blue-950/10 rounded-full blur-3xl"
-            animate={{ y: [0, -40, 0] }}
-            transition={{ duration: 10, repeat: Infinity }}
-          />
-        </div>
+      <CareersHero />
 
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight"
-          >
-            Build Something{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-blue-700 bg-clip-text text-transparent">
-              Extraordinary
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mt-4"
-          >
-            Join our talented team and help shape the future of digital
-            innovation.
-          </motion.p>
-        </div>
-      </section>
-
-      <section className="py-16 px-6">
+      <section id="why-join" className="scroll-mt-24 py-16 px-6">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 25 }}
@@ -205,7 +169,7 @@ export default function CareerPage() {
         </div>
       </section>
 
-      <section className="py-20 px-7">
+      <section id="apply" className="scroll-mt-24 py-20 px-7">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 25 }}
