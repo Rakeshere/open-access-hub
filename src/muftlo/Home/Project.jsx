@@ -220,7 +220,10 @@ export default function ProjectsShowcase() {
   ].filter((project) => project);
 
   return (
-    <section aria-labelledby="projects-heading" className="bg-brand-cream px-4 py-16 text-brand-navy md:px-8 md:py-24">
+    <section aria-labelledby="projects-heading" className="relative bg-brand-cream px-4 py-16 text-brand-navy md:px-8 md:py-24">
+      {/* soft joins: fade in from the navy screen above and out to the one below */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-brand-navy to-transparent" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent to-brand-navy" />
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4 border-b border-brand-navy/15 pb-6 md:mb-10">
           <div>

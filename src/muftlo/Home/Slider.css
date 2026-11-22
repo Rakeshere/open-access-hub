@@ -6,6 +6,21 @@
   color: var(--color-brand-cream);
   touch-action: pan-y;
 }
+/* soft joins: the gradient edges melt into the navy of the screens above and below */
+.brand-stories::before,
+.brand-stories::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 150px;
+  pointer-events: none;
+  z-index: 0;
+}
+.brand-stories::before { top: 0; background: linear-gradient(to bottom, #0b1733, rgba(11, 23, 51, 0)); }
+.brand-stories::after { bottom: 0; background: linear-gradient(to top, #0b1733, rgba(11, 23, 51, 0)); }
+.brand-stories h2,
+.brand-story-dots { position: relative; z-index: 5; }
 .brand-stories h2 { text-align: center; line-height: 1.2; margin: 0 20px 42px; }
 .brand-stories h2 span { color: var(--color-brand-orange); }
 .brand-stories-stage { position: relative; height: 390px; max-width: 1128px; margin: auto; }

@@ -287,7 +287,7 @@ export default function CareersHero() {
       </div>
 
       {/* perks strip */}
-      <motion.div {...fadeUp(0.7)} className="mx-auto max-w-5xl px-6 pb-12">
+      <motion.div {...fadeUp(0.7)} className="relative z-10 mx-auto max-w-5xl px-6 pb-12">
         <div className={`grid grid-cols-1 divide-y divide-brand-cream/10 rounded-3xl sm:grid-cols-3 sm:divide-x sm:divide-y-0 ${glass}`}>
           {perks.map(({ icon: Icon, title, desc }) => (
             <div key={title} className="group flex items-center gap-4 px-6 py-5 sm:justify-center">
@@ -302,6 +302,12 @@ export default function CareersHero() {
           ))}
         </div>
       </motion.div>
+
+      {/* soft fade at the join with the next screen */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-44 bg-gradient-to-b from-transparent to-brand-navy"
+      />
     </section>
   );
 }

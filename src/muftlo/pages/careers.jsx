@@ -123,7 +123,7 @@ export default function CareerPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
+    <main className="min-h-screen bg-brand-navy text-white overflow-hidden">
       <CareersHero />
 
       <section id="why-join" className="scroll-mt-24 py-16 px-6">
