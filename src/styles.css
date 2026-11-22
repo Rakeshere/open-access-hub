@@ -10,6 +10,10 @@
   --color-brand-navy: #0b1733;
   --color-brand-orange: #f7931e;
   --color-brand-cream: #faf7f2;
+  /* Product card tints (navy, deep teal, burnt orange) */
+  --color-product-suite: #13264f;
+  --color-product-hub: #0f3540;
+  --color-product-channel: #4a2911;
   --color-blue-50: #fff6eb;
   --color-blue-100: #ffe9cc;
   --color-blue-200: #ffd199;

@@ -32,3 +32,4 @@ use the editor.
 - Keep imported R&D site pages and shared UI under `src/muftlo`, with URL pages in `src/routes`, so source presentation remains intact while TanStack owns routing.
 - Services page = `ServicesShowcase` (opening slider) + `ServiceCategories` (topic sections), both in `src/muftlo/Services`; service topics and subtopics live as data in `ServiceCategories` so one card design renders every category.
 - Site images and videos are stored as Lovable project assets (.asset.json pointers), not hotlinked from third-party hosts, because outside links broke after import.
+- Products live as data in `src/muftlo/Products/products-data.js` (one object per product); the `/products` listing and `/products/$slug` detail pages render every entry with the shared `ProductCard`, so adding a product means adding one data object.

@@ -20,6 +20,8 @@ describe("App routing", () => {
     ["/about", "/about"],
     ["/contact", "/contact"],
     ["/careers", "/careers"],
+    ["/products", "/products/"],
+    ["/product detail", "/products/rd-suite"],
     ["/blog", "/blog/"],
     ["/blog article", "/blog/muftlo-digital-growth"],
   ])("matches the migrated %s page", (_label, path) => {
