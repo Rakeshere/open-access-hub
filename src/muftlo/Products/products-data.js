@@ -13,9 +13,9 @@ import {
   ShieldCheck,
   Users,
 } from "lucide-react";
-import suiteCover from "@/assets/products/rd-suite.jpg.asset.json";
-import hubCover from "@/assets/products/rd-agency-hub.jpg.asset.json";
-import channelCover from "@/assets/products/rd-team-channel.jpg.asset.json";
+import suiteCover from "@/assets/products/suite-billing-desk.jpg.asset.json";
+import hubCover from "@/assets/products/agency-marketing-board.jpg.asset.json";
+import channelCover from "@/assets/products/team-collaboration-table.jpg.asset.json";
 
 /*
   Add a new product by appending one object here — the products page,
@@ -32,6 +32,8 @@ export const products = [
       "Create GST invoices, track payments and manage every client relationship from one clean dashboard.",
     tags: ["GST Billing", "Client CRM"],
     cover: suiteCover.url,
+    vector: "suite",
+    chip: { label: "Invoice #1042", value: "₹48,500", status: "Paid" },
     tint: {
       overlay: "from-product-suite/0 via-product-suite/80 to-product-suite",
       solid: "bg-product-suite",
@@ -62,6 +64,8 @@ export const products = [
       "Plan campaigns, collect client approvals and report results — one workspace made specially for marketing agencies.",
     tags: ["Campaigns", "Client Approvals"],
     cover: hubCover.url,
+    vector: "hub",
+    chip: { label: "Diwali campaign", value: "Creative v3", status: "Approved" },
     tint: {
       overlay: "from-product-hub/0 via-product-hub/80 to-product-hub",
       solid: "bg-product-hub",
@@ -92,6 +96,8 @@ export const products = [
       "Team chat, tasks, announcements and attendance for your internal team — all in one private channel.",
     tags: ["Team Chat", "Task Management"],
     cover: channelCover.url,
+    vector: "channel",
+    chip: { label: "#design-team", value: "Stand-up at 10:30", status: "Seen" },
     tint: {
       overlay: "from-product-channel/0 via-product-channel/80 to-product-channel",
       solid: "bg-product-channel",

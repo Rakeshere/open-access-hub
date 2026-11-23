@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import Link from "@/muftlo/next/link";
 import { useParams } from "@/muftlo/next/navigation";
 import ProductCard from "@/muftlo/Products/ProductCard";
+import ProductVector from "@/muftlo/Products/ProductVectors";
 import { getProduct, products } from "@/muftlo/Products/products-data";
 
 const fadeUp = {
@@ -32,8 +33,7 @@ export default function ProductDetailPage() {
     <main className="relative overflow-hidden bg-brand-navy text-white">
       {/* HERO */}
       <section className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 pt-36 pb-20 md:pt-44 lg:grid-cols-2">
-        <div aria-hidden="true" className="pointer-events-none absolute -top-20 right-0 h-[30rem] w-[30rem] rounded-full bg-brand-orange/15 blur-3xl" />
-
+        
         <motion.div initial="hidden" animate="show" variants={{ show: { transition: { staggerChildren: 0.1 } } }} className="relative">
           <motion.div variants={fadeUp}>
             <Link href="/products" className="inline-flex items-center gap-2 text-sm font-medium text-white/60 transition-colors hover:text-brand-orange">
@@ -77,23 +77,36 @@ export default function ProductDetailPage() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="relative mx-auto w-full max-w-md"
         >
-          <div className={`overflow-hidden rounded-[2.5rem] ${product.tint.solid} shadow-[0_40px_90px_-30px_rgba(247,147,30,0.45)] ring-1 ring-white/10`}>
-            <img src={product.cover} alt={`${product.name} preview`} className="aspect-[3/4] w-full object-cover" />
+          <div className={`overflow-hidden rounded-[2.5rem] ${product.tint.solid} shadow-[0_40px_90px_-30px_rgba(0,0,0,0.8)] ring-1 ring-white/10`}>
+            <img src={product.cover} alt={`${product.name} in use`} className="aspect-[3/4] w-full object-cover" />
           </div>
           <motion.div
-            animate={{ y: [0, -8, 0] }}
+            animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-6 -left-4 rounded-2xl bg-brand-cream px-5 py-3 text-brand-navy shadow-xl md:-left-10"
+            className="absolute -right-3 top-8 flex h-24 w-24 items-center justify-center rounded-3xl bg-brand-cream shadow-xl ring-1 ring-brand-navy/10 md:-right-8"
           >
-            <p className="text-xs font-medium text-brand-navy/60">Built by</p>
-            <p className="text-sm font-bold">R&amp;D Software Solutions</p>
+            <ProductVector kind={product.vector} className="h-16 w-16" />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="absolute -bottom-6 -left-4 w-56 rounded-2xl bg-brand-cream p-4 text-brand-navy shadow-2xl md:-left-10"
+          >
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-navy/50">{product.chip.label}</p>
+            <div className="mt-1 flex items-center justify-between gap-3">
+              <p className="truncate text-base font-bold">{product.chip.value}</p>
+              <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-brand-orange px-2.5 py-1 text-[11px] font-bold text-white">
+                <Check className="h-3 w-3" strokeWidth={3} />
+                {product.chip.status}
+              </span>
+            </div>
           </motion.div>
         </motion.div>
       </section>
 
       {/* FEATURES */}
-      <section id="features" className="relative scroll-mt-28 bg-brand-cream py-24 text-brand-navy">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-brand-navy to-transparent" />
+      <section id="features" className="relative scroll-mt-28 border-t border-white/5 py-24">
         <div className="relative mx-auto max-w-7xl px-6">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} variants={fadeUp} className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange">Features</p>
@@ -112,18 +125,17 @@ export default function ProductDetailPage() {
                 key={title}
                 variants={fadeUp}
                 whileHover={{ y: -6 }}
-                className="group rounded-3xl bg-white p-7 shadow-[0_10px_40px_-20px_rgba(11,23,51,0.25)] ring-1 ring-brand-navy/5 transition-shadow duration-300 hover:shadow-[0_24px_50px_-20px_rgba(247,147,30,0.4)]"
+                className="group rounded-3xl bg-white/[0.04] p-7 ring-1 ring-white/10 transition-colors duration-300 hover:bg-white/[0.07] hover:ring-brand-orange/40"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-navy text-brand-orange transition-colors duration-300 group-hover:bg-brand-orange group-hover:text-white">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-orange/15 text-brand-orange ring-1 ring-brand-orange/30 transition-colors duration-300 group-hover:bg-brand-orange group-hover:text-white">
                   <Icon className="h-5 w-5" />
                 </span>
                 <h3 className="mt-5 text-lg font-bold">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-brand-navy/65">{text}</p>
+                <p className="mt-2 text-sm leading-relaxed text-white/60">{text}</p>
               </motion.div>
             ))}
           </motion.div>
         </div>
-        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-brand-navy" />
       </section>
 
       {/* WHO IT'S FOR */}
