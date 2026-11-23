@@ -7,5 +7,5 @@
 - [x] Verify public routes, all three blog articles, the contact form handoff, and a 390px phone viewport.
 - [x] Update the migration ledger with verified work and remaining external checks.
 - [x] About opening screen: remove spinning R&D badge and redesign the "What we do" card.
-- [ ] Products page in the nav with a card per product and a detail page each (R&D Suite = billing & client management, Agency Hub = for marketing companies, Communication Channel = internal team management).
+- [x] Products page in the nav with a card per product and a detail page each (R&D Suite = billing & client management, Agency Hub = for marketing companies, Communication Channel = internal team management).
 - [ ] Publish the site — blocked because the release was declined.
