@@ -18,7 +18,7 @@ import hubCover from "@/assets/products/agency-marketing-board.jpg.asset.json";
 import channelCover from "@/assets/products/team-collaboration-table.jpg.asset.json";
 
 /*
-  Add a new product by appending one object here — the products page,
+  Add a new product by appending one object here: the products page,
   the card design and the /products/<slug> detail page pick it up automatically.
   `tint` classes must stay full literal strings so the styles are generated.
 */
@@ -61,7 +61,7 @@ export const products = [
     badge: "For Agencies",
     tagline: "The operating system for marketing companies.",
     summary:
-      "Plan campaigns, collect client approvals and report results — one workspace made specially for marketing agencies.",
+      "Plan campaigns, collect client approvals and report results in one workspace made specially for marketing agencies.",
     tags: ["Campaigns", "Client Approvals"],
     cover: hubCover.url,
     vector: "hub",
@@ -71,7 +71,7 @@ export const products = [
       solid: "bg-product-hub",
     },
     description:
-      "Built from our own agency experience, R&D Agency Hub is made specially for marketing companies. Plan content and campaigns, share creatives for approval, track team hours per client and send polished performance reports — without scattered sheets and chats.",
+      "Built from our own agency experience, R&D Agency Hub is made specially for marketing companies. Plan content and campaigns, share creatives for approval, track team hours per client and send polished performance reports, without scattered sheets and chats.",
     stats: [
       { value: "50+", label: "Clients managed" },
       { value: "2x", label: "Faster approvals" },
@@ -80,7 +80,7 @@ export const products = [
     features: [
       { icon: CalendarDays, title: "Content calendar", text: "Plan posts and campaigns across every channel on one calendar." },
       { icon: Megaphone, title: "Campaign tracking", text: "Track every campaign's status, budget and results live." },
-      { icon: CheckCircle2, title: "Client approvals", text: "Clients approve creatives in one click — no lost message threads." },
+      { icon: CheckCircle2, title: "Client approvals", text: "Clients approve creatives in one click, no lost message threads." },
       { icon: LayoutDashboard, title: "Client portal", text: "A branded space where each client sees work, files and progress." },
       { icon: Clock3, title: "Time tracking", text: "Know exactly where team hours go on every retainer." },
       { icon: BarChart3, title: "Auto reports", text: "Monthly performance reports generated and shared automatically." },
@@ -93,7 +93,7 @@ export const products = [
     badge: "Team Hub",
     tagline: "Your internal team, connected and in sync.",
     summary:
-      "Team chat, tasks, announcements and attendance for your internal team — all in one private channel.",
+      "Team chat, tasks, announcements and attendance for your internal team, all in one private channel.",
     tags: ["Team Chat", "Task Management"],
     cover: channelCover.url,
     vector: "channel",
@@ -103,7 +103,7 @@ export const products = [
       solid: "bg-product-channel",
     },
     description:
-      "R&D Communication Channel is your company's private space for internal team management. Talk in channels by department, assign and track tasks, share announcements and files, and see who's working on what — so your team stays aligned without endless calls and personal chats.",
+      "R&D Communication Channel is your company's private space for internal team management. Talk in channels by department, assign and track tasks, share announcements and files, and see who's working on what, so your team stays aligned without endless calls and personal chats.",
     stats: [
       { value: "1", label: "Private team space" },
       { value: "3x", label: "Faster updates" },

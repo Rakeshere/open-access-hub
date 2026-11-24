@@ -103,7 +103,7 @@ export default function AboutPage() {
               </span>{" "}
               started with a passion for creativity and a vision to transform
               digital storytelling. What began as an idea soon turned into a
-              mission—helping businesses engage meaningfully, build identity,
+              mission: helping businesses engage meaningfully, build identity,
               and grow through powerful digital strategies.
             </p>
 

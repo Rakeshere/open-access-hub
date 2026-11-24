@@ -2,13 +2,14 @@
 import "./HeroSection.css";
 import Link from "@/muftlo/next/link";
 import { getSiteMedia } from "@/muftlo/site-media";
-import { Star, StarHalf } from "lucide-react";
+import { Star } from "lucide-react";
+import GenreShowcase from "./GenreShowcase";
 
 export default function MarketingSection() {
   return (
     <section className="py-16 px-6 lg:px-12 mt-20 overflow-hidden text-white">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-4">
             <div>
               <p className="text-5xl sm:text-7xl md:text-9xl font-extrabold text-blue-600 tracking-tight leading-[1.05]">
@@ -139,70 +140,8 @@ export default function MarketingSection() {
             </div>
           </div>
 
-          {/* Video Grid */}
-          <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 h-full">
-            {/* Column 1 */}
-            <div className="flex flex-col gap-4">
-              <div className="relative group rounded-lg h-48 sm:h-56 md:h-64 overflow-hidden">
-                <video
-                  src="/__l5e/assets-v1/f00670b1-3a9d-46c8-b959-5f47064b6002/bts-reel.mp4"
-                  className="w-full h-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                ></video>
-              </div>
-
-              <div className="relative group rounded-lg h-36 sm:h-40 md:h-44 overflow-hidden">
-                <video
-                  src="/__l5e/assets-v1/37dc010a-eb1e-42b0-8ac5-89580957ed0b/search-abode-24.mp4"
-                  className="w-full h-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                ></video>
-              </div>
-            </div>
-
-            {/* Column 2 */}
-            <div className="relative group rounded-lg h-96 sm:h-[28rem] md:h-112 overflow-hidden">
-              <video
-                src="/__l5e/assets-v1/5f7b2a1c-7acb-4db3-9d06-21a80c8c3229/search-abode-26.mp4"
-                className="w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-              ></video>
-            </div>
-
-            {/* Column 3 */}
-            <div className="flex flex-col gap-4">
-              <div className="relative group rounded-lg h-36 sm:h-40 md:h-44 overflow-hidden">
-                <video
-                  src="/__l5e/assets-v1/40fff7a3-0bb5-478e-b1b3-fc8a73c2f886/gym-reel.mp4"
-                  className="w-full h-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                ></video>
-              </div>
-
-              <div className="relative group rounded-lg h-48 sm:h-56 md:h-64 overflow-hidden">
-                <video
-                  src="/__l5e/assets-v1/b0e57753-2246-4b23-bb85-5f173fbca491/soni-bagh.mp4"
-                  className="w-full h-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                ></video>
-              </div>
-            </div>
-          </div>
+          {/* Topic slider */}
+          <GenreShowcase />
         </div>
       </div>
     </section>

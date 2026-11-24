@@ -14,6 +14,12 @@
   --color-product-suite: #13264f;
   --color-product-hub: #0f3540;
   --color-product-channel: #4a2911;
+  /* Home topic slider palettes (navy / orange / cream family) */
+  --color-genre-navy: #1c2d55;
+  --color-genre-ember: #d96a06;
+  --color-genre-rust: #b35507;
+  --color-genre-peach: #ffe9cc;
+  --color-genre-apricot: #ffd199;
   --color-blue-50: #fff6eb;
   --color-blue-100: #ffe9cc;
   --color-blue-200: #ffd199;

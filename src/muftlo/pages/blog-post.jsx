@@ -23,7 +23,7 @@ export default function BlogDetailPage() {
       cover:
         getSiteMedia("muftloBlog.jpg"),
       intro:
-        "What if your marketing agency didn’t just run ads, but understood your business like a partner? R&D Software Solutions was born from these questions — and today it's a revolution.",
+        "What if your marketing agency didn’t just run ads, but understood your business like a partner? R&D Software Solutions was born from these questions, and today it's a revolution.",
       sections: [
         {
           title: "How R&D Software Solutions Started: Built from the Inside Out",
@@ -33,8 +33,8 @@ export default function BlogDetailPage() {
           title: "The Problem R&D Software Solutions Solved",
           text: (
             <p>
-              Brands were getting templated and repetitive strategies. R&D Software Solutions —
-              Marketing Universe For The Lead Outcomes — was launched to bring
+              Brands were getting templated and repetitive strategies. R&D Software Solutions,
+              Marketing Universe For The Lead Outcomes, was launched to bring
               creativity, outcome-driven marketing, and modern execution.
             </p>
           ),

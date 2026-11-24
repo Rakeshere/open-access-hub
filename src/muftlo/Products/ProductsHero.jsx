@@ -79,7 +79,7 @@ export default function ProductsHero() {
             transition={{ duration: 0.6, delay: 0.45 }}
             className="mt-6 max-w-xl text-base leading-relaxed text-white/65 md:text-lg"
           >
-            Billing, agency work and team management — ready-made platforms from the R&amp;D team, shaped by years of real client projects.
+            Billing, agency work and team management: ready-made platforms from the R&amp;D team, shaped by years of real client projects.
           </motion.p>
 
           {/* product selector */}
@@ -146,7 +146,7 @@ export default function ProductsHero() {
           </motion.div>
         </div>
 
-        {/* RIGHT — photo stack */}
+        {/* RIGHT: photo stack */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

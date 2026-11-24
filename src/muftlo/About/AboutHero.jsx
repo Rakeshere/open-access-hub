@@ -199,7 +199,7 @@ export default function AboutHero() {
           <span className="mb-4 hidden h-px w-10 bg-brand-orange lg:block" />
           <p className="text-sm leading-relaxed text-brand-cream/65 md:text-base lg:max-w-xs">
             R&D Software Solutions helps businesses grow with digital marketing,
-            web & app development, AI automation and creative production — all
+            web & app development, AI automation and creative production, all
             under one roof.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">

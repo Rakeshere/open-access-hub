@@ -227,7 +227,7 @@ export default function ProjectsShowcase() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4 border-b border-brand-navy/15 pb-6 md:mb-10">
           <div>
-            <p className="mb-2 text-xs font-semibold uppercase text-brand-orange">Selected work · 01—05</p>
+            <p className="mb-2 text-xs font-semibold uppercase text-brand-orange">Selected work · 01 / 05</p>
             <h2 id="projects-heading" className="text-4xl font-extrabold md:text-5xl">
               Our Projects
             </h2>

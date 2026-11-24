@@ -306,7 +306,7 @@ function CategorySection({ category, number }) {
                   <Icon aria-hidden="true" size={20} />
                 </span>
                 <span className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">
-                  {String(number).padStart(2, "0")} — {category.eyebrow}
+                  {String(number).padStart(2, "0")} / {category.eyebrow}
                 </span>
               </div>
               <h2 id={`${category.id}-title`} className="text-3xl font-extrabold leading-[1.05] text-brand-cream sm:text-4xl md:text-5xl">
@@ -364,7 +364,7 @@ export default function ServiceCategories() {
       <div className="mx-auto mb-8 max-w-3xl px-5 text-center md:mb-10">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">What we offer</p>
         <h2 className="text-3xl font-extrabold leading-tight text-brand-cream md:text-5xl">Everything your brand needs to grow</h2>
-        <p className="mt-4 text-base text-brand-cream/65 md:text-lg">Five focused teams, one partner — pick a service to explore what we do.</p>
+        <p className="mt-4 text-base text-brand-cream/65 md:text-lg">Five focused teams, one partner. Pick a service to explore what we do.</p>
       </div>
       <CategoryNav activeId={activeId} />
       {serviceCategories.map((category, index) => (

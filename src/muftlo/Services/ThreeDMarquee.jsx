@@ -22,7 +22,7 @@ export function ThreeDMarqueeDemoSecond() {
       </h2>
 
       <p className="relative z-20 mx-auto max-w-2xl py-8 text-center text-sm text-neutral-200 md:text-base">
-        From strategy to storytelling — we craft digital experiences that make
+        From strategy to storytelling, we craft digital experiences that make
         your brand unforgettable. Whether it’s scaling your reach, building
         trust, or driving sales, our team blends creativity and data to help you
         grow faster, smarter, and stronger.

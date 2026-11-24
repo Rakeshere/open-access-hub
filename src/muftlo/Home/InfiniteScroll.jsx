@@ -86,7 +86,7 @@ const JourneySection = () => (
           </motion.h2>
         </div>
         <p className="max-w-xs text-xs leading-relaxed text-brand-cream/60 md:pt-16">
-          A clear, connected process from first insight to lasting growth — turning complex business goals into brands people notice, trust and choose.
+          A clear, connected process from first insight to lasting growth, turning complex business goals into brands people notice, trust and choose.
         </p>
       </div>
 

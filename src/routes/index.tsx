@@ -4,7 +4,7 @@ import Page from "@/muftlo/pages/home";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "R&D Software Solutions — Marketing Universe For The Lead Outcomes" },
+      { title: "R&D Software Solutions | Marketing Universe For The Lead Outcomes" },
       {
         name: "description",
         content:
@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "R&D Software Solutions — Marketing Universe For The Lead Outcomes",
+        content: "R&D Software Solutions | Marketing Universe For The Lead Outcomes",
       },
       {
         property: "og:description",

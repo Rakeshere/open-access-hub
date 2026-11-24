@@ -181,7 +181,7 @@ export default function CareerPage() {
               Ready to Join Us?
             </h2>
             <p className="text-gray-400 text-lg">
-              Tell us about yourself — it only takes a minute.
+              Tell us about yourself. It only takes a minute.
             </p>
           </motion.div>
 

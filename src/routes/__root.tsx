@@ -82,7 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "R&D Software Solutions — Jaipur Digital Marketing Studio" },
+      { title: "R&D Software Solutions | Jaipur Digital Marketing Studio" },
       {
         name: "description",
         content:
@@ -91,7 +91,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "R&D Software Solutions" },
       {
         property: "og:title",
-        content: "R&D Software Solutions — Jaipur Digital Marketing Studio",
+        content: "R&D Software Solutions | Jaipur Digital Marketing Studio",
       },
       {
         property: "og:description",

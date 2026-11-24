@@ -17,7 +17,7 @@ function LeftInfo({ className = "" }) {
     <motion.div {...reveal(0.5)} className={className}>
       <Quote className="mb-4 h-8 w-8 rotate-180 fill-brand-cream text-brand-cream" />
       <p className="max-w-xs text-sm leading-relaxed text-brand-cream/75 md:text-base">
-        I build products that solve real business problems — clear strategy,
+        I build products that solve real business problems: clear strategy,
         smart technology and a team that treats your growth like its own.
       </p>
       <p className="mt-10 text-3xl font-bold tracking-tight text-brand-cream md:text-4xl">

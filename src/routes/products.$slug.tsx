@@ -5,7 +5,7 @@ import { getProduct } from "@/muftlo/Products/products-data";
 export const Route = createFileRoute("/products/$slug")({
   head: ({ params }) => {
     const product = getProduct(params.slug);
-    const title = product ? `${product.name} — R&D Software Solutions` : "Product — R&D Software Solutions";
+    const title = product ? `${product.name} | R&D Software Solutions` : "Product | R&D Software Solutions";
     const description = product ? `${product.tagline} ${product.summary}` : "Software products by R&D Software Solutions.";
     return {
       meta: [
