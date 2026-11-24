@@ -54,9 +54,9 @@ export default function ProductsHero() {
         }}
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 pt-32 pb-16 md:pt-40 lg:grid-cols-[1.05fr_1fr] lg:pb-24">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 pt-32 pb-16 md:pt-40 lg:grid-cols-[1.05fr_1fr] lg:pb-24">
         {/* LEFT */}
-        <div>
+        <div className="min-w-0">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -87,14 +87,14 @@ export default function ProductsHero() {
             initial="hidden"
             animate="show"
             variants={{ show: { transition: { staggerChildren: 0.08, delayChildren: 0.55 } } }}
-            className="mt-9 grid gap-3"
+            className="mt-9 grid grid-cols-1 gap-3"
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
           >
             {products.map((p, i) => {
               const on = i === active;
               return (
-                <motion.li key={p.slug} variants={{ hidden: { opacity: 0, x: -16 }, show: { opacity: 1, x: 0 } }}>
+                <motion.li key={p.slug} className="min-w-0" variants={{ hidden: { opacity: 0, x: -16 }, show: { opacity: 1, x: 0 } }}>
                   <button
                     type="button"
                     onClick={() => setActive(i)}
@@ -206,7 +206,7 @@ export default function ProductsHero() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.5, delay: 0.15, ease }}
-              className="absolute -left-2 bottom-16 z-10 w-56 rounded-2xl bg-brand-cream p-4 text-brand-navy shadow-2xl sm:-left-8"
+              className="absolute -left-2 bottom-16 z-10 w-64 rounded-2xl bg-brand-cream p-4 text-brand-navy shadow-2xl sm:-left-8"
             >
               <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-navy/50">{current.chip.label}</p>
               <div className="mt-1 flex items-center justify-between gap-3">

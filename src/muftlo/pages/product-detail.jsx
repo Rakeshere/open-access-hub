@@ -91,7 +91,7 @@ export default function ProductDetailPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="absolute -bottom-6 -left-4 w-56 rounded-2xl bg-brand-cream p-4 text-brand-navy shadow-2xl md:-left-10"
+            className="absolute -bottom-6 -left-4 w-64 rounded-2xl bg-brand-cream p-4 text-brand-navy shadow-2xl md:-left-10"
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-navy/50">{product.chip.label}</p>
             <div className="mt-1 flex items-center justify-between gap-3">
