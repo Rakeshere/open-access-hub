@@ -17,13 +17,13 @@ import metaImg from "@/assets/genres/genre-meta.jpg.asset.json";
 // Each topic: two-line title, short line, photo, floating icons and a brand palette.
 // Palettes only mix the site's navy, orange and cream (see --color-genre-* in styles.css).
 const genres = [
-  { key: "web", top: "Web", bottom: "Development", text: "Fast, modern websites built to load quick, rank well and turn visitors into leads.", img: webImg.url, icons: [Code2, Globe, MonitorSmartphone], bg: "var(--color-brand-cream)", blob: "var(--color-brand-orange)", ink: "navy" },
-  { key: "app", top: "App", bottom: "Development", text: "Android and iOS apps your customers enjoy using, from first sketch to store launch.", img: appImg.url, icons: [Smartphone, AppWindow, Bell], bg: "var(--color-genre-peach)", blob: "var(--color-genre-navy)", ink: "cream" },
-  { key: "ai", top: "AI", bottom: "Automation", text: "Chatbots and smart workflows that answer, follow up and report while you sleep.", img: aiImg.url, icons: [Bot, Sparkles, Cpu], bg: "var(--color-brand-cream)", blob: "var(--color-genre-ember)", ink: "cream" },
-  { key: "crm", top: "CRM", bottom: "Systems", text: "Every lead, client and payment in one clear dashboard your whole team can use.", img: crmImg.url, icons: [Users, Contact, BarChart3], bg: "var(--color-genre-apricot)", blob: "var(--color-genre-navy)", ink: "cream" },
-  { key: "marketing", top: "Digital", bottom: "Marketing", text: "Campaigns, content and creatives planned around one goal: more customers.", img: marketingImg.url, icons: [Megaphone, Target, TrendingUp], bg: "var(--color-genre-peach)", blob: "var(--color-brand-orange)", ink: "navy" },
-  { key: "seo", top: "SEO &", bottom: "Search", text: "Climb Google results with technical fixes, local SEO and content that ranks.", img: seoImg.url, icons: [Search, LineChart, Link2], bg: "var(--color-brand-cream)", blob: "var(--color-genre-rust)", ink: "cream" },
-  { key: "meta", top: "Meta", bottom: "Ads", text: "Facebook and Instagram ads that reach the right people and bring real enquiries.", img: metaImg.url, icons: [Instagram, Facebook, Heart], bg: "var(--color-genre-apricot)", blob: "var(--color-genre-navy)", ink: "cream" },
+  { key: "web", top: "Web", bottom: "Development", text: "Fast, modern websites built to load quick, rank well and turn visitors into leads.", img: webImg.url, icons: [Code2, Globe, MonitorSmartphone], bg: "transparent", blob: "color-mix(in oklab, var(--color-brand-orange) 5%, transparent)", ink: "cream" },
+  { key: "app", top: "App", bottom: "Development", text: "Android and iOS apps your customers enjoy using, from first sketch to store launch.", img: appImg.url, icons: [Smartphone, AppWindow, Bell], bg: "transparent", blob: "color-mix(in oklab, var(--color-brand-orange) 5%, transparent)", ink: "cream" },
+  { key: "ai", top: "AI", bottom: "Automation", text: "Chatbots and smart workflows that answer, follow up and report while you sleep.", img: aiImg.url, icons: [Bot, Sparkles, Cpu], bg: "transparent", blob: "color-mix(in oklab, var(--color-brand-orange) 5%, transparent)", ink: "cream" },
+  { key: "crm", top: "CRM", bottom: "Systems", text: "Every lead, client and payment in one clear dashboard your whole team can use.", img: crmImg.url, icons: [Users, Contact, BarChart3], bg: "transparent", blob: "color-mix(in oklab, var(--color-brand-orange) 5%, transparent)", ink: "cream" },
+  { key: "marketing", top: "Digital", bottom: "Marketing", text: "Campaigns, content and creatives planned around one goal: more customers.", img: marketingImg.url, icons: [Megaphone, Target, TrendingUp], bg: "transparent", blob: "color-mix(in oklab, var(--color-brand-orange) 5%, transparent)", ink: "cream" },
+  { key: "seo", top: "SEO &", bottom: "Search", text: "Climb Google results with technical fixes, local SEO and content that ranks.", img: seoImg.url, icons: [Search, LineChart, Link2], bg: "transparent", blob: "color-mix(in oklab, var(--color-brand-orange) 5%, transparent)", ink: "cream" },
+  { key: "meta", top: "Meta", bottom: "Ads", text: "Facebook and Instagram ads that reach the right people and bring real enquiries.", img: metaImg.url, icons: [Instagram, Facebook, Heart], bg: "transparent", blob: "color-mix(in oklab, var(--color-brand-orange) 5%, transparent)", ink: "cream" },
 ];
 
 // Same command structure in every shape so the blob can morph between them.
@@ -60,7 +60,7 @@ export default function GenreShowcase() {
       transition={{ duration: 0.8, ease: [0.22, 0.68, 0, 1] }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
-      className="relative h-[440px] w-full overflow-hidden rounded-[28px] shadow-[0_30px_80px_-30px] shadow-brand-orange/40 ring-1 ring-brand-cream/10 sm:h-[500px]"
+      className="relative h-[440px] w-full overflow-hidden rounded-[28px] sm:h-[500px]"
       style={{ background: g.bg, transition: "background 900ms ease" }}
       aria-roledescription="carousel"
       aria-label="What we build"
@@ -76,7 +76,7 @@ export default function GenreShowcase() {
           initial={false}
           animate={{ cx: index % 2 ? 560 : 520, cy: index % 2 ? 540 : 560, fill: g.blob }}
           r="120"
-          opacity="0.25"
+          opacity="0"
           transition={{ duration: 1.1, ease: [0.65, 0, 0.35, 1] }}
         />
       </svg>
@@ -116,7 +116,7 @@ export default function GenreShowcase() {
         </AnimatePresence>
         <Link
           href="/services"
-          className={`mt-5 inline-flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-semibold transition-transform hover:-translate-y-0.5 ${light ? "bg-brand-cream text-brand-navy" : "bg-brand-navy text-brand-cream"}`}
+          className={`mt-5 inline-flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-semibold transition-transform hover:-translate-y-0.5 bg-brand-orange text-brand-navy`}
         >
           Explore service <ArrowUpRight className="size-4" aria-hidden="true" />
         </Link>
@@ -133,7 +133,7 @@ export default function GenreShowcase() {
             exit={{ x: "70%", rotate: 80, scale: 0.85, opacity: 0 }}
             transition={{ duration: 0.95, ease: [0.22, 0.68, 0, 1] }}
           >
-            <div className="size-full overflow-hidden rounded-full border-[6px] border-brand-cream shadow-[0_25px_60px_-15px] shadow-brand-navy/60">
+            <div className="size-full overflow-hidden rounded-full border-[6px] border-brand-orange/80 shadow-[0_25px_60px_-15px] shadow-brand-navy/60">
               <img src={g.img} alt={`${g.top} ${g.bottom}`} className="size-full object-cover" />
             </div>
           </motion.div>
@@ -175,7 +175,7 @@ export default function GenreShowcase() {
               className="group relative pb-2.5"
             >
               <span
-                className={`block size-9 overflow-hidden rounded-full border-2 transition-all duration-300 sm:size-11 ${i === index ? "scale-110 border-brand-cream" : "border-transparent opacity-80 group-hover:opacity-100"}`}
+                className={`block size-9 overflow-hidden rounded-full border-2 transition-all duration-300 sm:size-11 ${i === index ? "scale-110 border-brand-orange" : "border-transparent opacity-80 group-hover:opacity-100"}`}
               >
                 <img src={item.img} alt="" className="size-full object-cover" />
               </span>
@@ -183,7 +183,7 @@ export default function GenreShowcase() {
                 <span className={`absolute bottom-0 left-1 right-1 h-[3px] overflow-hidden rounded-full ${light ? "bg-brand-cream/30" : "bg-brand-navy/20"}`}>
                   <motion.span
                     key={`${item.key}-${paused}`}
-                    className={`block h-full ${light ? "bg-brand-cream" : "bg-brand-navy"}`}
+                    className={`block h-full bg-brand-orange`}
                     initial={{ width: paused ? "100%" : "0%" }}
                     animate={{ width: "100%" }}
                     transition={{ duration: paused ? 0 : DELAY / 1000, ease: "linear" }}
