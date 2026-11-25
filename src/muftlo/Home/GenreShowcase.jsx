@@ -152,8 +152,6 @@ export default function GenreShowcase() {
             >
               <motion.span
                 className="grid size-10 place-items-center rounded-2xl bg-brand-cream text-brand-orange shadow-lg shadow-brand-navy/25 sm:size-12"
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3 + i * 0.6, repeat: Infinity, ease: "easeInOut" }}
               >
                 <Icon className="size-5 sm:size-6" aria-hidden="true" />
               </motion.span>
