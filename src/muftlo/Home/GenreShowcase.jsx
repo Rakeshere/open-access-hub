@@ -82,13 +82,13 @@ export default function GenreShowcase() {
       </svg>
 
       {/* Copy */}
-      <div className="absolute left-5 top-6 z-10 w-[58%] sm:left-8 sm:top-9 sm:w-[52%]">
+      <div className="absolute left-5 top-6 z-30 w-[58%] sm:left-8 sm:top-9 sm:w-[52%]">
         <p className={`text-[11px] font-semibold uppercase tracking-[0.18em] ${light ? "text-brand-cream/70" : "text-brand-navy/70"}`}>
           {String(index + 1).padStart(2, "0")} / {String(genres.length).padStart(2, "0")} · What we build
         </p>
         <AnimatePresence mode="wait">
           <motion.div key={g.key} className="mt-3">
-            <h2 className={`text-[clamp(1.6rem,4.2vw,2.9rem)] font-extrabold uppercase leading-[0.95] tracking-tight ${light ? "text-brand-cream" : "text-brand-navy"}`}>
+            <h2 className={`text-[clamp(1.5rem,2.9vw,2.4rem)] font-extrabold uppercase leading-[0.95] tracking-tight ${light ? "text-brand-cream" : "text-brand-navy"}`}>
               {[g.top, g.bottom].map((line, li) => (
                 <span key={line} className="block overflow-hidden">
                   <motion.span
@@ -108,7 +108,7 @@ export default function GenreShowcase() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -6 }}
               transition={{ duration: 0.45, delay: 0.18 }}
-              className={`mt-4 max-w-[30ch] text-[13px] leading-relaxed sm:text-sm ${light ? "text-brand-cream/80" : "text-brand-navy/80"}`}
+              className={`mt-4 max-w-[22ch] sm:max-w-[30ch] text-[13px] leading-relaxed sm:text-sm ${light ? "text-brand-cream/80" : "text-brand-navy/80"}`}
             >
               {g.text}
             </motion.p>
