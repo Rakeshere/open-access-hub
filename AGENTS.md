@@ -34,3 +34,4 @@ use the editor.
 - Site images and videos are stored as Lovable project assets (.asset.json pointers), not hotlinked from third-party hosts, because outside links broke after import.
 - Products live as data in `src/muftlo/Products/products-data.js` (one object per product); the `/products` listing and `/products/$slug` detail pages render every entry with the shared `ProductCard`, so adding a product means adding one data object.
 - Home reference animations stay within the services and projects sections: data-driven expanding service panels and native sticky project cards preserve content and avoid scroll hijacking.
+- The home pre-footer gallery is one clipped, overlapping photo stage with staggered rise-and-drop motion and a reduced-motion fallback, replacing the separate video strip.

@@ -11,3 +11,4 @@
 - [ ] Publish the site — blocked because the release was declined.
 - [x] Match the home services expanding cards to the first video.
 - [x] Match the home projects scroll-stacking animation to the second video and verify both sections.
+- [ ] Replace both pre-footer card rows with the reference's rising overlapping photo cards and verify motion.

@@ -1,5 +1,4 @@
 import Slider from "@/muftlo/Home/Slider";
-import VideoSlider from "@/muftlo/Home/VideoWork";
 import ProjectsShowcase from "@/muftlo/Home/Project";
 import HeroSection from "@/muftlo/Home/HeroSection";
 import InfiniteScroll from "@/muftlo/Home/InfiniteScroll";
@@ -21,7 +20,6 @@ export default function Home() {
       <Testimonials />
       <RecentBlogs />
       <WorkGallery />
-      <VideoSlider />
     </>
   );
 }
