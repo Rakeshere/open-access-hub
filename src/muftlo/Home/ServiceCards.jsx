@@ -1,32 +1,40 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import Link from "@/muftlo/next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { getSiteMedia } from "@/muftlo/site-media";
+import webImage from "@/assets/genres/genre-web.jpg.asset.json";
+import aiImage from "@/assets/genres/genre-ai.jpg.asset.json";
+import marketingImage from "@/assets/genres/genre-marketing.jpg.asset.json";
 
 const services = [
   {
-    title: "Web Development",
+    title: "Web & App Development",
     category: "DIGITAL EXPERIENCES",
     description: "Fast, thoughtful websites and software built around the way your business works.",
-    image: getSiteMedia("image.png"),
-    featured: true,
+    image: webImage.url,
+  },
+  {
+    title: "AI Automations",
+    category: "SMARTER OPERATIONS",
+    description: "Chatbots, connected workflows and CRM systems that give your team more time for meaningful work.",
+    image: aiImage.url,
   },
   {
     title: "Digital Marketing",
     category: "GROWTH & VISIBILITY",
-    description: "",
-    image: getSiteMedia("Best Digital Marketing.jpg"),
-  },
-  {
-    title: "Photo & Video",
-    category: "CONTENT & CREATIVE",
-    description: "",
-    image: getSiteMedia("The Wood A.jpg"),
+    description: "SEO, Meta ads and creative campaigns that connect your brand with the right people.",
+    image: marketingImage.url,
   },
 ];
 
 export function WobbleCardDemo() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+  useEffect(() => {
+    if (paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => setActive((value) => (value + 1) % services.length), 3200);
+    return () => window.clearInterval(timer);
+  }, [paused]);
   return (
     <section className="py-12 md:py-16" aria-labelledby="home-services-title">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
@@ -42,35 +50,20 @@ export function WobbleCardDemo() {
           </Button>
         </div>
 
-        <div className="-mx-5 grid grid-flow-col auto-cols-[84%] gap-3 overflow-x-auto px-5 pb-2 snap-x snap-mandatory md:mx-0 md:grid-flow-row md:auto-cols-auto md:grid-cols-[1.18fr_0.91fr_0.91fr] md:overflow-visible md:px-0 md:pb-0">
-          {services.map((service) => (
-            <Link
-              href="/services"
-              key={service.title}
-              className={`group relative flex min-h-[245px] snap-start items-stretch overflow-hidden rounded-lg border border-brand-cream/15 p-5 text-brand-navy transition-transform duration-300 hover:-translate-y-1 md:min-h-[280px] md:p-6 ${service.featured ? "bg-brand-cream" : service.title === "Digital Marketing" ? "bg-brand-orange" : "bg-brand-cream"}`}
-            >
-              {service.featured ? (
-                <div className="grid w-full grid-cols-[1.1fr_0.8fr] items-center gap-3 md:grid-cols-[1fr_0.85fr] md:gap-4">
-                  <div className="flex min-w-0 flex-col items-start">
-                    <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-brand-orange">{service.category}</p>
-                    <h3 className="text-xl font-semibold leading-tight md:text-2xl">{service.title}</h3>
-                    <p className="mt-2 max-w-xs text-xs leading-relaxed text-brand-navy/75 md:text-sm">{service.description}</p>
-                    <span className="mt-3 inline-flex items-center gap-2 text-sm font-semibold">Read more <span className="grid size-7 place-items-center rounded-full bg-brand-orange text-brand-navy transition-transform group-hover:translate-x-1"><ArrowRight aria-hidden="true" size={15} /></span></span>
-                  </div>
-                  <img src={service.image} alt="Website design and development" className="h-36 w-full rounded-md object-cover md:h-40" />
-                </div>
-              ) : (
-                <div className="flex w-full flex-col items-start">
-                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-brand-navy/65">{service.category}</p>
-                  <h3 className="max-w-[12ch] text-xl font-semibold leading-tight md:text-2xl">{service.title}</h3>
-                  <span className="mt-auto inline-flex w-full items-center justify-between pt-7 text-sm font-semibold">
-                    Read more
-                    <span className="grid size-8 place-items-center rounded-full bg-brand-cream/80 text-brand-navy transition-transform group-hover:translate-x-1"><ArrowUpRight aria-hidden="true" size={17} /></span>
-                  </span>
-                </div>
-              )}
-              <span className="sr-only">Explore {service.title} services</span>
-            </Link>
+        <div className="home-service-strip" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocusCapture={() => setPaused(true)} onBlurCapture={() => setPaused(false)}>
+          {services.map((service, index) => (
+            <article key={service.title} data-active={active === index} className="home-service-card" onMouseEnter={() => setActive(index)}>
+              <div className="home-service-copy">
+                <p className="mb-3 text-[10px] font-semibold uppercase text-brand-navy/55">{service.category}</p>
+                <h3 className="text-xl font-semibold leading-tight md:text-2xl">{service.title}</h3>
+                <p className="home-service-description mt-3 text-sm leading-relaxed text-brand-navy/70">{service.description}</p>
+                <Button asChild variant="ghost" className="mt-auto h-auto justify-start gap-3 p-0 pt-5 text-brand-navy hover:bg-transparent hover:text-brand-navy">
+                  <Link href="/services">Read more <span className="grid size-8 place-items-center rounded-full bg-brand-orange"><ArrowRight aria-hidden="true" /></span></Link>
+                </Button>
+              </div>
+              <div className="home-service-image"><img src={service.image} alt={service.title} loading="lazy" /></div>
+              <Button variant="ghost" size="icon" className="absolute inset-0 h-full w-full rounded-lg hover:bg-transparent" aria-label={`Show ${service.title}`} aria-pressed={active === index} onClick={() => setActive(index)} />
+            </article>
           ))}
         </div>
 

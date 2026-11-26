@@ -9,3 +9,5 @@
 - [x] About opening screen: remove spinning R&D badge and redesign the "What we do" card.
 - [x] Products page in the nav with a card per product and a detail page each (R&D Suite = billing & client management, Agency Hub = for marketing companies, Communication Channel = internal team management).
 - [ ] Publish the site — blocked because the release was declined.
+- [x] Match the home services expanding cards to the first video.
+- [x] Match the home projects scroll-stacking animation to the second video and verify both sections.

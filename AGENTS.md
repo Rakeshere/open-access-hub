@@ -33,3 +33,4 @@ use the editor.
 - Services page = `ServicesShowcase` (opening slider) + `ServiceCategories` (topic sections), both in `src/muftlo/Services`; service topics and subtopics live as data in `ServiceCategories` so one card design renders every category.
 - Site images and videos are stored as Lovable project assets (.asset.json pointers), not hotlinked from third-party hosts, because outside links broke after import.
 - Products live as data in `src/muftlo/Products/products-data.js` (one object per product); the `/products` listing and `/products/$slug` detail pages render every entry with the shared `ProductCard`, so adding a product means adding one data object.
+- Home reference animations stay within the services and projects sections: data-driven expanding service panels and native sticky project cards preserve content and avoid scroll hijacking.
